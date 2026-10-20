@@ -5,8 +5,9 @@ build/
 .env.*
 !.env.example
 *.log
-data/*.sqlite
-data/*.db
+**/data/*.sqlite
+**/data/*.sqlite-*
+**/data/*.db
 .DS_Store
 Thumbs.db
 *.local
