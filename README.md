@@ -53,7 +53,46 @@
 
 ## 技术栈
 
-React 18 + TypeScript + Vite + Three.js(R3F) + Zustand · Node 22 + Express + SQLite · Docker
+React 18 + TypeScript + Vite + Three.js(R3F) + Zustand · Node 22+ + Express + SQLite · Docker
+
+---
+
+## 快速开始
+
+环境要求：Node.js ≥ 22、pnpm ≥ 9。
+
+```bash
+pnpm install
+pnpm dev
+```
+
+- 前端：http://localhost:5173
+- 后端：http://localhost:8787/api/health
+
+首次启动会自动创建数据库并写入演示账号：
+
+| 账号 | 密码 | 角色 |
+|---|---|---|
+| student | student123 | 学生 |
+| teacher | teacher123 | 教师 |
+| admin | admin123 | 管理员 |
+
+AI 层默认走规则引擎，不配置也能跑。需要接大模型时，复制 `.env.example` 为 `.env` 并填写 OpenAI 兼容接口：
+
+```
+AI_BASE_URL=https://api.deepseek.com/v1
+AI_API_KEY=你的密钥
+AI_MODEL=deepseek-chat
+```
+
+### 常用命令
+
+| 命令 | 作用 |
+|---|---|
+| `pnpm dev` | 同时启动前端和后端 |
+| `pnpm -r typecheck` | 全仓库类型检查 |
+| `pnpm -r test` | 运行单元测试 |
+| `pnpm --filter @tizao/sim-core test` | 只跑仿真内核测试 |
 
 ---
 
@@ -76,11 +115,13 @@ deploy/            Docker
 ## 当前状态
 
 - [x] 方案文档
-- [ ] 代码骨架（D1）
-- [ ] 仿真内核（D2）
-- [ ] 24 步交互（D3）
-- [ ] 3D 资产（D4）
-- [ ] AI 层（D5）
+- [x] 代码骨架（D1）
+- [x] 仿真内核（降阶模型 + 12 个单测）
+- [x] 24 步交互链路
+- [x] 三个 3D 场景（占位级）
+- [x] AI 层（规则引擎 + 大模型可选）
+- [ ] 真实工艺参数与数据
+- [ ] Blender 正式资产
 - [ ] 部署（D6）
 - [ ] 联调验收（D7）
 

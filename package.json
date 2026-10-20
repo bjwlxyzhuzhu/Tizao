@@ -1,0 +1,14 @@
+{
+  "name": "tizao",
+  "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "scripts": {
+    "dev": "concurrently -n web,server -c blue,green \"pnpm --filter @tizao/web dev\" \"pnpm --filter @tizao/server dev\"",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.2"
+  }
+}
